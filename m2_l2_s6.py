@@ -15,6 +15,10 @@ try:
     x = x_element.text
     y = calc(x)
 
+    button = browser.find_element_by_tag_name("button")
+    browser.execute_script("return arguments[0].scrollIntoView(true);", button)
+    button.click()
+
     input1 = browser.find_element_by_css_selector("#answer")
     input1.send_keys(y)
     
